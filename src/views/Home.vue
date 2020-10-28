@@ -33,7 +33,7 @@
                 ></avatar>
                 <p>{{ selectedPerson.name }}</p>
               </div>
-              <div style="height: 500px; overflow: auto">
+              <div style="height: 250px; overflow: auto">
                 <div v-if="selectedPerson.city">
                   <span>地区</span
                   ><span class="ml-4">{{ selectedPerson.city }}</span>
@@ -69,8 +69,8 @@
                     </li>
                   </ol>
                 </div>
-                <video src="/video/example.mp4" controls width="100%"></video>
               </div>
+              <video src="/video/example.mp4" controls width="100%"></video>
             </div>
           </div>
         </div>
