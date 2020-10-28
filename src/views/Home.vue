@@ -61,7 +61,10 @@
                 <div v-if="selectedPerson.experience">
                   <span>政治经历</span>
                   <ol>
-                    <li v-for="experience in selectedPerson.experience" :key="experience">
+                    <li
+                      v-for="experience in selectedPerson.experience"
+                      :key="experience"
+                    >
                       {{ experience }}
                     </li>
                   </ol>

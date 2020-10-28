@@ -25,20 +25,20 @@
 
 .slide-up-enter,
 .slide-down-leave-to {
-	transform: translateY(10%);
-	opacity: 0;
+  transform: translateY(10%);
+  opacity: 0;
 }
 .slide-down-enter,
 .slide-up-leave-to {
-	transform: translateY(-10%);
-	opacity: 0;
+  transform: translateY(-10%);
+  opacity: 0;
 }
 .slide-up-enter-active,
 .slide-down-enter-active {
-	transition: transform 1s ease;
+  transition: transform 1s ease;
 }
 .slide-up-leave-active,
 .slide-down-leave-active {
-	transition: all 1s ease;
+  transition: all 1s ease;
 }
 </style>

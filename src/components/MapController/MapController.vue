@@ -5,9 +5,9 @@
         <svg class="center" id="map" height="50%">
           <image
             v-if="year"
-            :xlink:href="'img/maps/' + year + '.svg'"
+            :xlink:href="'img/maps/' + year + '.png'"
             height="100%"
-            width= "100%"
+            width="100%"
           />
           <rect
             class="rect"
@@ -15,6 +15,7 @@
             y="0%"
             @click="clicked('北部地区')"
           ></rect>
+
           <rect
             class="rect"
             opacity="0"
@@ -37,7 +38,7 @@
 import "echarts/lib/chart/line";
 import "echarts/lib/component/polar";
 import "echarts/map/js/china";
-import {  map } from "@/data/map";
+import { map } from "@/data/map";
 
 export default {
   name: "map-controller",
@@ -62,7 +63,7 @@ export default {
     clicked(param) {
       console.log(param);
       // let region = param.name;
-      let region = param
+      let region = param;
       if (this.region == region) {
         this.region = null;
         this.$emit("cancel");
