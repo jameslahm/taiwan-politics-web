@@ -1,12 +1,35 @@
 <template>
   <div id="map-controller">
-    <v-chart
-      :options="map"
-      autoresize
-      ref="map"
-      style="height: 100%; width: 100%"
-      @click="clicked"
-    ></v-chart>
+    <div class="container" style="height: 100%;">
+      <div style="position: relative; height: 100%;">
+        <svg class="center" id="map" height="50%">
+          <image
+            v-if="year"
+            :xlink:href="'img/maps/' + year + '.svg'"
+            height="100%"
+            width= "100%"
+          />
+          <rect
+            class="rect"
+            opacity="0"
+            y="0%"
+            @click="clicked('北部地区')"
+          ></rect>
+          <rect
+            class="rect"
+            opacity="0"
+            y="33%"
+            @click="clicked('中部地区')"
+          ></rect>
+          <rect
+            class="rect"
+            opacity="0"
+            y="66%"
+            @click="clicked('南部地区')"
+          ></rect>
+        </svg>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,13 +37,10 @@
 import "echarts/lib/chart/line";
 import "echarts/lib/component/polar";
 import "echarts/map/js/china";
-import { ECharts, map } from "@/data/map";
+import {  map } from "@/data/map";
 
 export default {
   name: "map-controller",
-  components: {
-    "v-chart": ECharts
-  },
   data: function() {
     return {
       /**
@@ -41,7 +61,8 @@ export default {
     },
     clicked(param) {
       console.log(param);
-      let region = param.name;
+      // let region = param.name;
+      let region = param
       if (this.region == region) {
         this.region = null;
         this.$emit("cancel");
@@ -51,10 +72,10 @@ export default {
       }
     },
     cancelSelect() {
-      this.$refs["map"].dispatchAction({
-        type: "geoUnSelect",
-        name: this.region
-      });
+      // this.$refs["map"].dispatchAction({
+      //   type: "geoUnSelect",
+      //   name: this.region
+      // });
       this.region = null;
     }
   },
