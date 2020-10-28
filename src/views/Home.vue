@@ -66,6 +66,7 @@
                     </li>
                   </ol>
                 </div>
+                <video src="/video/example.mp4" controls width="100%"></video>
               </div>
             </div>
           </div>
