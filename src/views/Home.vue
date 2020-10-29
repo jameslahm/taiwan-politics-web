@@ -33,7 +33,7 @@
                 ></avatar>
                 <p>{{ selectedPerson.name }}</p>
               </div>
-              <div style="height: 250px; overflow: auto">
+              <div style="height: 240px; overflow: auto;margin-bottom: 10px;">
                 <div v-if="selectedPerson.city">
                   <span>地区</span
                   ><span class="ml-4">{{ selectedPerson.city }}</span>
